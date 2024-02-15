@@ -1,0 +1,14 @@
+{
+  "name": "numeric-data-visualization",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ankitadev/numeric-data-visualization.git",
+  "author": "ankitadev <ankitae.dev@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon /index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
