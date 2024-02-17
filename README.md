@@ -3,13 +3,13 @@ A NodeJS and React application that queries and displays numeric data
 
 ## Requirements:
 
-### Back-end
+### Back-end - A NodeJs application
 
-1. Pre-populated database
+1. Pre-populated database                                                                                                      
 1. First one outputs numeric data extracted from DB.
 2. The second outputs random numeric data.
 
-### Front-end
+### Front-end - A ReactJs Application
 
 1. Displays the data returned by the back-end as a graph.
 2. Query a new batch of data from the back-end.
