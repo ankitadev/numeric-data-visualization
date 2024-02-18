@@ -5,9 +5,9 @@ A NodeJS and React application that queries and displays numeric data
 
 ### Back-end - A NodeJs application
 
-1. Pre-populated database                                                                                                      
-1. First one outputs numeric data extracted from DB.
-2. The second outputs random numeric data.
+1. Pre - populate database
+2. First one outputs numeric data extracted from DB.
+3. The second outputs random numeric data.
 
 ### Front-end - A ReactJs Application
 
@@ -21,5 +21,6 @@ A NodeJS and React application that queries and displays numeric data
 3. yarn start
 4. cd client and yarn start
 5. Access UI from http://localhost:3000/
+6. `.env` file with `DATABASE_URL` to connect to the database
 
 #### Ran on node v18.11.0
