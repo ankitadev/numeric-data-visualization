@@ -6,7 +6,11 @@
   "author": "ankitadev <ankitae.dev@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon /index.js"
+    "start": "nodemon backend/server",
+    "server": "nodemon index.js",
+    "client": "yarn --cwd client start",
+    "dev": "concurrently \"yarn start\" \"yarn client\""
+    
   },
   "dependencies": {
     "dotenv": "^16.4.4",

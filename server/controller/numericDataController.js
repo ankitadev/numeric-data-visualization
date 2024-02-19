@@ -9,7 +9,6 @@ const NaturalGasPrice = require("../schema/numericData");
  */
 const GetNumericData = asyncHandler(async (req, res) => {
   const getData = await NaturalGasPrice.find({});
-  console.log("getData", getData.length)
   res.json(getData);
   });
 

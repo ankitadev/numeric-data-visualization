@@ -19,7 +19,6 @@ const ConnectMongoDB = require("./server/config/db");
 ConnectMongoDB();
 
 const mongoString = process.env.DATABASE_URL;
-console.log(mongoString)
 mongoose.connect(mongoString);
 const database = mongoose.connection;
 
