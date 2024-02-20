@@ -1,16 +1,77 @@
-.app-landingPage {
-    min-height: 93vh !important;
-    background-color: #fdfbf9;
-  }
-  .container-land-landingPage {
-    display: block;
-    min-width: 90% !important;
-    min-height: 290px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .cardGroup-landingPage {
-    width: 25rem;
-    float: right;
-    padding: 20px;
-  }
+li.page-item {
+  float: left;
+  display: block;
+  padding: 7px;
+}
+a.page-link {
+  text-decoration: none;
+  color: #535266;
+}
+ul.pagination {
+  display: block;
+  border-style: solid;
+  border-width: 1px;
+  width: 70%;
+  height: 30px;
+  padding: 5px;
+  border-color: #535266;
+  margin: auto;
+  margin-top: 40px;
+}
+/* mouse over link */
+a:hover {
+  color: #8884d8;
+}
+nav.navbar.navbar-expand-lg.navbar-light.bg-light {
+  padding: 20px;
+  border-bottom-color: #060a20;
+  border-style: solid;
+  border-width: 2px;
+  display: block;
+  background-color: #25255f;
+}
+a.navbar-brand {
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  font-size: 20px;
+}
+.recharts-wrapper {
+  margin: auto;
+  padding-top: 60px;
+}
+footer {
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #ccc;
+  border-top: #e7dfdf 1px solid;
+  color: #25255f;
+}
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+#body {
+  padding: 10px;
+  padding-bottom: 60px; /* Height of the footer */
+}
+main.app {
+  padding: 10px;
+  padding-bottom: 60px;
+}
+button.btn.btn-primary {
+  padding: 10px;
+  margin: 6px;
+  margin-left: 22%;
+  background-color: #24255f;
+  color: #fff;
+  border: #24255f 2px solid;
+}
+button.btn.btn-primary:hover {
+  background-color: #7374c7;
+  cursor: pointer;
+}

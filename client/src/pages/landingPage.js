@@ -1,105 +1,34 @@
 import "./landingPage.css";
 import React from "react";
-import axios from "axios";
-import { useEffect, useState } from "react";
-import PaginationComponent from "../components/paginationComponent";
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-} from "recharts";
+import { useState } from "react";
+
+import LineChartComponent from "../components/lineChartComponent";
+import AreaChartComponent from "../components/areaChartComponent";
+import BarChartComponent from "../components/barChartComponent";
+import { Container, Button } from "react-bootstrap";
 
 function LandingPage() {
-  const [naturalGasPrices, setNaturalGasPrices] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10;
-
-  useEffect(() => {
-    const config = {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    };
-    const fetchEmployees = async () => {
-      const { data } = await axios.get(`/api/getall`, config).catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-
-      setNaturalGasPrices(data);
-    };
-    fetchEmployees();
-  }, []);
-
-  const totalItems = naturalGasPrices.length;
-
-  const totalPages = Math.ceil(totalItems / itemsPerPage);
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = naturalGasPrices.slice(
-    indexOfFirstItem,
-    indexOfLastItem
-  );
-
-  const handlePageChange = (page) => {
-    setCurrentPage(page);
-  };
+  const [show, setShow] = useState('areaChart');
 
   return (
-    <div>
+    <div className="LandingPageApp">
 
-      <LineChart
-        width={1300}
-        height={700}
-        data={currentItems}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis
-          dataKey="Month"
-          label={{
-            value: "Year-Month",
-            position: "insideBottomRight",
-            offset: -10,
-          }}
-        />
-        <YAxis
-          unit="$"
-          type="number"
-          label={{ value: "Price", angle: -90, position: "insideLeft" }}
-        />
-        <Tooltip />
-        <Legend />
-        <Line
-          type="monotone"
-          dataKey="Price"
-          name="Monthly prices of Natural gas"
-          stroke="#8884d8"
-          activeDot={{ r: 8 }}
-        />
-      </LineChart>
+      <Button onClick={() => { setShow('areaChart') }}>Area Chart</Button>
+    <Button onClick={() => { setShow('barChart') }}>Bar Chart</Button>
+    <Button onClick={() => { setShow('lineChart') }}>Line Chart</Button>
 
-      <ul>
-        {currentItems.map((item) => (
-          <li key={item.id}>{item.Month}</li>
-        ))}
-      </ul>
+      <Container className="LandingPageApp">
 
-      {/* Render the pagination component */}
-      <PaginationComponent
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={handlePageChange}
-      />
+    {
+      (show === 'areaChart') ? <AreaChartComponent /> : null
+    }
+    {
+      (show === 'barChart') ? <BarChartComponent /> : null
+    }
+    {
+      (show === 'lineChart') ? <LineChartComponent /> : null
+    }
+    </Container>
     </div>
   );
 }
